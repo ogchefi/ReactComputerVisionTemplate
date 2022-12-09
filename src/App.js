@@ -75,7 +75,6 @@ function App() {
           }}
         />
       </header>
-      <div id="count" ref={countRef}>-</div>
     </div>
   );
 }
