@@ -31,13 +31,13 @@ function App() {
       webcamRef.current.video.readyState === 4
     ) {
       // Get Video Properties
-      const video = webcamRef.current.video;
-      const videoWidth = webcamRef.current.video.videoWidth;
-      const videoHeight = webcamRef.current.video.videoHeight;
+      // const video = webcamRef.current.video;
+      // const videoWidth = webcamRef.current.video.videoWidth;
+      // const videoHeight = webcamRef.current.video.videoHeight;
 
       // Set video width
-      webcamRef.current.video.width = videoWidth;
-      webcamRef.current.video.height = videoHeight;
+      // webcamRef.current.video.width = videoWidth;
+      // webcamRef.current.video.height = videoHeight;
 
       // Set canvas height and width
       // canvasRef.current.width = videoWidth;
@@ -46,10 +46,10 @@ function App() {
       const objects = await net.detect(video);
       // console.log('obj:', objects)
 
-      if (Date.now() - lastTime > 1000) {
-        lastTime = Date.now();
-        countRef.current.innerHTML = objects.length;
-      }
+      // if (Date.now() - lastTime > 1000) {
+      //   lastTime = Date.now();
+      //   countRef.current.innerHTML = objects.length;
+      // }
 
       // Draw mesh
       // const ctx = canvasRef.current.getContext("2d");
