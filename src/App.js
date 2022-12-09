@@ -44,7 +44,7 @@ function App() {
       // canvasRef.current.height = videoHeight;
 
       const objects = await net.detect(video);
-      console.log('obj:', objects)
+      // console.log('obj:', objects)
 
       if (Date.now() - lastTime > 1000) {
         lastTime = Date.now();
@@ -75,6 +75,7 @@ function App() {
           }}
         />
       </header>
+      <div id="count" ref={countRef}>-</div>
     </div>
   );
 }
