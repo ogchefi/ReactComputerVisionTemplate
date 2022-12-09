@@ -67,17 +67,9 @@ function App() {
             height: 480,
           }}
         />
-
         <canvas
           ref={canvasRef}
           style={{
-            position: "absolute",
-            marginLeft: "auto",
-            marginRight: "auto",
-            left: 0,
-            right: 0,
-            textAlign: "center",
-            zindex: 8,
             width: 640,
             height: 480,
           }}
