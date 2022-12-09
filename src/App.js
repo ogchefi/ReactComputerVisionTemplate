@@ -66,14 +66,7 @@ function App() {
             width: 640,
             height: 480,
           }}
-        />
-        <canvas
-          ref={canvasRef}
-          style={{
-            width: 640,
-            height: 480,
-          }}
-        />
+          />
       </header>
     </div>
   );
