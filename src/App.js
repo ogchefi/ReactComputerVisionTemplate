@@ -42,17 +42,19 @@ function App() {
       canvasRef.current.height = videoHeight;
 
       const obj = await net.detect(video);
-      console.log('obj:', obj)
+      // console.log('obj:', obj)
 
       // Draw mesh
       const ctx = canvasRef.current.getContext("2d");
 
       // 5. TODO - Update drawing utility
-      drawRect(obj, ctx)
+      // drawRect(obj, ctx)
     }
   };
 
   useEffect(()=>{runCoco()},[]);
+
+  console.log('rendering...')
 
   return (
     <div className="App">
