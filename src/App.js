@@ -52,7 +52,7 @@ function App() {
     }
   };
 
-  // useEffect(()=>{runCoco()},[]);
+  useEffect(()=>{runCoco()},[]);
 
   // console.log('rendering...')
 
