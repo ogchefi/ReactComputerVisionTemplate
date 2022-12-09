@@ -7,9 +7,10 @@ import Webcam from "react-webcam";
 import "./App.css";
 import { drawRect } from "./utilities";
 
+let lastTime = 0;
+
 function App() {
   const webcamRef = useRef(null);
-  const canvasRef = useRef(null);
   const countRef = useRef(null);
 
   // Main function
@@ -45,7 +46,10 @@ function App() {
       const objects = await net.detect(video);
       console.log('obj:', objects)
 
-      countRef.current.innerHTML = objects.length;
+      if (Date.now() - lastTime > 1000) {
+        lastTime = Date.now();
+        countRef.current.innerHTML = objects.length;
+      }
 
       // Draw mesh
       // const ctx = canvasRef.current.getContext("2d");
@@ -70,8 +74,8 @@ function App() {
             height: 480,
           }}
         />
-        <div id="count" ref={countRef}>-</div>
       </header>
+      <div id="count" ref={countRef}>-</div>
     </div>
   );
 }
