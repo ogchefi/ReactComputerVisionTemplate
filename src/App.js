@@ -48,7 +48,7 @@ function App() {
       const ctx = canvasRef.current.getContext("2d");
 
       // 5. TODO - Update drawing utility
-      // drawRect(obj, ctx)
+      drawRect(obj, ctx)
     }
   };
 
@@ -68,7 +68,7 @@ function App() {
           }}
         />
 
-        {/* <canvas
+        <canvas
           ref={canvasRef}
           style={{
             position: "absolute",
@@ -81,7 +81,7 @@ function App() {
             width: 640,
             height: 480,
           }}
-        /> */}
+        />
       </header>
     </div>
   );
