@@ -10,6 +10,7 @@ import { drawRect } from "./utilities";
 function App() {
   const webcamRef = useRef(null);
   const canvasRef = useRef(null);
+  const countRef = useRef(null);
 
   // Main function
   const runCoco = async () => {
@@ -38,14 +39,16 @@ function App() {
       webcamRef.current.video.height = videoHeight;
 
       // Set canvas height and width
-      canvasRef.current.width = videoWidth;
-      canvasRef.current.height = videoHeight;
+      // canvasRef.current.width = videoWidth;
+      // canvasRef.current.height = videoHeight;
 
-      const obj = await net.detect(video);
-      // console.log('obj:', obj)
+      const objects = await net.detect(video);
+      console.log('obj:', objects)
+
+      countRef.current.innerHTML = objects.length;
 
       // Draw mesh
-      const ctx = canvasRef.current.getContext("2d");
+      // const ctx = canvasRef.current.getContext("2d");
 
       // 5. TODO - Update drawing utility
       // drawRect(obj, ctx)
@@ -66,7 +69,8 @@ function App() {
             width: 640,
             height: 480,
           }}
-          />
+        />
+        <div id="count" ref={countRef}>-</div>
       </header>
     </div>
   );
